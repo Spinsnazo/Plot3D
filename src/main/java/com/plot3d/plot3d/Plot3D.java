@@ -7,13 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Plot3D extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Plot3D.class.getResource("Plot3D.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1018, 516);
         stage.setTitle("Plot3D");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

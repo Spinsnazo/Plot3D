@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.plot3d.plot3d/com.plot3d.plot3d.HelloApplication</mainClass>
+                            <mainClass>com.plot3d.plot3d/com.plot3d.plot3d.Plot3D</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

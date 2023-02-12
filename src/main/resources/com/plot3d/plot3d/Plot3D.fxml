@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="426.0" prefWidth="536.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.plot3d.plot3d.Controller">
+<VBox fx:id="Window" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="1018.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.plot3d.plot3d.Controller">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
     </padding>
 
     <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
+   <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="764.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="543.7999389648437" minWidth="10.0" prefWidth="496.5999877929687" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.199951171875" minWidth="0.0" prefWidth="54.20001220703125" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.199951171875" minWidth="0.0" prefWidth="116.39992675781252" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="106.40000801086425" minHeight="0.0" prefHeight="64.80000610351563" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="192.59998931884763" minHeight="0.0" prefHeight="41.20000152587889" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="161.19999237060546" minHeight="1.4000106811523665" prefHeight="50.399981689453135" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="161.19999237060546" minHeight="0.0" prefHeight="47.20001831054688" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="388.79998779296875" minHeight="10.0" prefHeight="50.000036621093784" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="201.19998779296873" minHeight="10.0" prefHeight="45.5999816894531" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="201.19998779296873" minHeight="10.0" prefHeight="34.800006103515614" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="201.19998779296873" minHeight="10.0" prefHeight="38.399981689453114" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="296.79999084472655" minHeight="10.0" prefHeight="173.6000183105469" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Button fx:id="LoadDataButton" mnemonicParsing="false" prefHeight="8.0" prefWidth="146.0" text="Load data" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Angles to rotate points through" textAlignment="CENTER" wrappingWidth="170.13665771484375" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+         <Spinner fx:id="AlphaAngle" editable="true" prefHeight="26.0" prefWidth="112.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x-axis" wrappingWidth="31.51800537109375" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="y-axis" wrappingWidth="31.51800537109375" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="z-axis" wrappingWidth="33.11798095703125" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+         <Spinner fx:id="BetaAngle" editable="true" prefHeight="26.0" prefWidth="112.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+         <Spinner fx:id="GammaAngle" editable="true" prefHeight="26.0" prefWidth="112.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="z0" textAlignment="CENTER" wrappingWidth="52.317994117736816" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters of casting" textAlignment="CENTER" wrappingWidth="170.93670749664307" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="d" textAlignment="CENTER" wrappingWidth="54.718018341064635" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+         <Spinner fx:id="z0Spinner" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+         <Spinner fx:id="dSpinner" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+         <StackPane fx:id="holder" prefHeight="18.0" prefWidth="64.0" GridPane.columnSpan="2" GridPane.rowSpan="9" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin></StackPane>
+         <Canvas fx:id="drawingPanel" height="486.0" width="595.0" GridPane.columnSpan="2" GridPane.rowSpan="9" />
+         <Button fx:id="castingButton" mnemonicParsing="false" text="Cast to 2D" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+         <Button fx:id="clearButton" mnemonicParsing="false" text="Clear" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+      </children>
+   </GridPane>
 </VBox>
